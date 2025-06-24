@@ -1,7 +1,8 @@
+
 export type Asset = {
   ticker: string;
   price: number;
-  assetClass: string;
+  assetClass: 'Commodities' | 'Equities' | 'Credit';
 };
 
 export type AssetClass = string;
