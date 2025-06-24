@@ -1,19 +1,20 @@
 import { render, screen } from "@testing-library/react";
 import TableRow from "./TableRow";
+import type { Asset } from "../../types";
 
-const mockAssetPositive = {
+const mockAssetPositive: Asset = {
   assetClass: "Credit",
   price: 100,
   ticker: "POS",
 };
 
-const mockAssetNegative = {
+const mockAssetNegative: Asset = {
   assetClass: "Equities",
   price: -100,
   ticker: "NEG",
 };
 
-const mockAssetZero = {
+const mockAssetZero: Asset = {
   assetClass: "Commodities",
   price: 0,
   ticker: "ZERO",
