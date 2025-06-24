@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import Table from "./Table";
+import type { HeaderItem } from "../../types";
 
 const mockData = [
   { assetClass: "Credit", price: 3150.67, ticker: "ALPHA" },
@@ -8,13 +9,26 @@ const mockData = [
   { assetClass: "Commodities", price: -3791.37, ticker: "CHARLIE" },
 ];
 
-const headers = ["Asset Class", "Price", "Ticker"];
+const headers: HeaderItem[] = [
+  {
+    label: "Asset Class",
+    value: "assetClass",
+  },
+  {
+    label: "Price",
+    value: "price",
+  },
+  {
+    label: "Ticker",
+    value: "ticker",
+  },
+];
 
 describe("Table Component", () => {
   it("renders table headers", () => {
     render(<Table data={mockData} headers={headers} />);
     headers.forEach((header) => {
-      expect(screen.getByText(header)).toBeInTheDocument();
+      expect(screen.getByText(header.label)).toBeInTheDocument();
     });
   });
 

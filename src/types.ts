@@ -9,3 +9,8 @@ export type AssetClass = string;
 export type ColorStates = {
   default: string;
 };
+
+export type HeaderItem = {
+  label: string;
+  value: string;
+}

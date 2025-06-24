@@ -1,9 +1,10 @@
-import type { Asset } from "../../types";
+import type { Asset, HeaderItem } from "../../types";
+import { TableHeader } from "../TableHeader";
 import { TableRow } from "../TableRow";
 
 interface ITableProps {
   data: Asset[];
-  headers: string[];
+  headers: HeaderItem[];
 }
 
 const Table = ({ data, headers }: ITableProps) => {
@@ -12,14 +13,14 @@ const Table = ({ data, headers }: ITableProps) => {
       <table className="table-auto w-full">
         <thead className="border-b-2 border-stone-400">
           <tr>
-            {headers.map((name) => (
-              <th className="p-2">{name}</th>
+            {headers.map((item) => (
+              <TableHeader item={item} />
             ))}
           </tr>
         </thead>
         <tbody>
           {data.map((asset) => (
-            <TableRow asset={asset} key={asset.ticker}/>
+            <TableRow asset={asset} key={asset.ticker} />
           ))}
         </tbody>
       </table>
