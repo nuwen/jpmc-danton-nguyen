@@ -33,17 +33,17 @@ function App() {
 
   useEffect(() => {
     if (currentSortColumn === "price") {
-      setRows(rows => [...rows].sort(sortByPrice));
+      setRows((rows) => [...rows].sort(sortByPrice));
       return;
     }
 
     if (currentSortColumn === "assetClass") {
-      setRows(rows => [...rows].sort(sortByAssetClass));
+      setRows((rows) => [...rows].sort(sortByAssetClass));
       return;
     }
 
     if (currentSortColumn === "ticker") {
-      setRows(rows => [...rows].sort(sortByTicker));
+      setRows((rows) => [...rows].sort(sortByTicker));
       return;
     }
   }, [currentSortColumn]);

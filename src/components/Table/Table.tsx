@@ -15,7 +15,7 @@ const Table = ({ data, headers, sortColumn }: ITableProps) => {
         <thead className="border-b-2 border-stone-400">
           <tr>
             {headers.map((item) => (
-              <TableHeader item={item} onClick={() => sortColumn(item.value)}/>
+              <TableHeader item={item} onClick={() => sortColumn(item.value)} />
             ))}
           </tr>
         </thead>
