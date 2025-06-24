@@ -8,6 +8,9 @@ To run application
 To run tests
 - run `npm test` to run tests
 
+To sort a column
+- Hover cursor for table header and click.
+
 
 
 # Front End Engineer Technical Assessment
