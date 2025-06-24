@@ -1,54 +1,51 @@
-# React + TypeScript + Vite
+# Danton Nguyen - Submission
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To run application
+- run `npm install` to install dependencies
+- run `npm run dev` in terminal
+- navigate to `http://localhost:5173/` in browser
 
-Currently, two official plugins are available:
+To run tests
+- run `npm test` to run tests
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# Front End Engineer Technical Assessment
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Specification
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Build a single-page application that represents a table of financial instruments.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Table Capabilities
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+#### Sorting
+- By **Asset Class**: Commodities first, then Equities, and Credit last.
+- By **Price**: In descending order.
+- By **Ticker**: In alphabetical order.
+
+#### Presentation
+- Rows should be colour-coded by **Asset Class**:
+  - Commodities = White
+  - Equities = Blue
+  - Credit = Green
+- **Price** values:
+  - Display in **blue** if positive.
+  - Display in **red** if negative.
+
+### Data Format
+
+You may assume an API exists which provides financial instrument data in the following JSON-encoded format:
+
+```json
+[
+  {
+    "ticker": "ALPHA",
+    "price": 3150.67, 
+    "assetClass": "Credit"
+  }, 
+  {
+    "ticker": "BETA",
+    "price": 3791.37,
+    "assetClass": "Equities"
+  }
+]
